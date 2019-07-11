@@ -1,1 +1,22 @@
-<p>meal works!</p>
+<div class="container">
+        <div class="jumbotron">
+          <h2 class="text-center">Meals</h2>
+          <div>
+            <app-meal-form (emitQuote)="addNewMeal($event)"></app-meal-form>
+          </div>
+          <br>
+      
+          <div class="row">
+            <div class="col-12">
+      
+              <h3>Meal</h3>
+              <div *ngFor='let meal of meals; let i = index'>
+                <app-meal-details [meal]="meal" [meal]='meal' (isComplete) = 'deleteMeal($event,i)' ></app-meal-details>
+              </div>
+            </div>
+      
+            
+            </div>
+          </div>
+        </div>
+      
